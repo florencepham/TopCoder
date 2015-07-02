@@ -106,7 +106,7 @@ class UnderscoreJustification {
 		int gapL; 
 		int extraS; 
 		int numS = width; 
-		int numG = words.size() - 1; 
+		int num = words.size() - 1; 
 
 		for (int i = 0; i < words.size(); i++) {
 			numS -= words[i].length(); 
@@ -118,16 +118,13 @@ class UnderscoreJustification {
 
 		for (int i = 1; i < words.size(); i++) {
 			cout << extraS << " " << numG << endl; 
-			if (((extraS <= 0) || (extraS == numG)) && (words[i][0] <= 'Z')) {
-				cout << "less " << endl; 
-				string lessSpace = smallest + addSpaces(gapL) + words[i]; 
-				smallest = lessSpace;
+			if (words[i][0] <= 'Z') {
+				smallest += addSpaces(gapL) + words[i]; 
+			} else if (extraS <= 0 || extraS < numG) {
+				smallest += addSpaces(gapL) + words[i]; 
 			} else {
-								cout << "more " << endl; 
-
-				string moreSpace = smallest + addSpaces(gapL + 1) + words[i]; 
+				smallest += addSpaces(gapL + 1) + words[i]; 
 				extraS--; 
-				smallest = moreSpace; 
 			}
 			numG--; 
 		}
