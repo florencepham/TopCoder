@@ -128,7 +128,6 @@
 // 
 // 
 // END CUT HERE
-#line 132 "Paintball.cpp"
 #include <iostream>
 #include <sstream>
 #include <algorithm>
@@ -141,9 +140,42 @@
 
 using namespace std; 
 
+typedef vector<string> VS 
+
 class Paintball {
 	public:
-	vector <string> getLeaderboard(vector <string> players, vector <string> messages) {
-		
+	vector <string> getLeaderboard(vector <string> players, vector <string> messages) 
+	{
+		map <string, string> playerToTeam = parsePlayer(players); 
+		map <string, int> playerScore; 
+		map <string, VS> teams = parseTeam(players); 
+
+		for (int i = 0; i < messages.size(); i++) {
+			string mesg = messages[i]; 
+			int pos = 0; 
+			string attacker = ""; 
+			while (mesg[pos] != ' ') {
+				attack += mesg[pos];
+			}
+
+			pos += 12; 
+			string attackee = mesg.substr(pos, mesg.length() - pos); 
+
+			string teamAttacker = playerToTeam[attacker];
+			string teamAttackee = playerToTeam[attackee]; 
+
+			if (teamAttacker == teamAttackee) {
+				playerScore[attacker]--; 
+				playerScore[attackee]++; 
+			} else {
+				playerScore[attacker]++; 
+				playerScore[attackee]--; 
+			}
+		}
+
+		for (int i = 0; i < )
+
+
+
 	}
 };
