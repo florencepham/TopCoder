@@ -115,6 +115,9 @@ class Decipherability {
 	{
 		int L = s.size(); 
 		int x, y; 
+
+		// If a list of string A---A and K is 4, it's left without know the removed is
+		// left or right one
 		for (y = 0; y < L; y++) {
 			for (x = 0; x < y; x++) {
 				if (s[x] == s[y] && L!=K && y - x <= K) {
