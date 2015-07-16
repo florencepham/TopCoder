@@ -70,7 +70,7 @@
 // down. 
 // 
 // END CUT HERE
-#line 74 "Iditarod.cpp"
+//#line 74 "Iditarod.cpp"
 #include <iostream>
 #include <sstream>
 #include <algorithm>
@@ -85,7 +85,44 @@ using namespace std;
 
 class Iditarod {
 	public:
-	int avgMinutes(vector <string> times) {
-		
+	int avgMinutes(vector <string> times) 
+	{
+		vector<int> mins = parseMinutes(times);
+		double total = 0.0;
+		int N = mins.size(); 
+
+		for (int i = 0; i < mins.size(); i++) {
+			total += mins[i];
+		}
+
+		return round(total / N); 
+	}
+
+	private: 
+
+	vector<int> parseMinutes(vector<string> times) 
+	{
+		vector<int> mins; 
+
+		for (int i = 0; i < times.size(); i++) {
+			string info = times[i];
+			int hour = (10 * (info[0] - '0') + info[1] - '0') % 12; 
+			int min = (10 * (info[3] - '0') + info[4] - '0');
+			int moreHour = 0;
+			if (info[6] == 'P') {
+				moreHour = 12; 
+			}
+
+			string dayW = ""; 
+			for (int j = 14; j < info.length(); j++) {
+				dayW += info[j];
+			}
+			int day = stoi(dayW);
+
+			int totalMin = ((day - 1) * 24 + hour + moreHour - 8) * 60 + min; 
+			mins.push_back(totalMin);
+		}
+
+		return mins; 
 	}
 };
