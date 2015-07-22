@@ -89,7 +89,7 @@
 // 
 // 
 // END CUT HERE
-//#line 93 "ORSolitaire.cpp"
+#line 93 "ORSolitaire.cpp"
 #include <iostream>
 #include <sstream>
 #include <algorithm>
@@ -105,25 +105,6 @@ using namespace std;
 class ORSolitaire {
 	public:
 	int getMinimum(vector <int> numbers, int goal) {
-		int prevOr = 0; 
-		int curOr = 0; 
-		int r = 0; 	// number to be removed 
-
-		int num = 7 | 62);// & 0xF;
-
-		cout << num; 
-		// iterate through the list of numbers
-		for (int i = 0; i < numbers.size(); i++) {
-			if (numbers[i] == goal) {
-				r++; 
-			} else {
-				curOr = (curOr | numbers[i]) & 0xF; 
-				if (curOr == goal) {
-					r++; 
-					curOr = prevOr;
-				}
-			}
-		}
-		return r; 
+		
 	}
 };
