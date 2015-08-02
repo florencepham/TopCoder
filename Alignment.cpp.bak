@@ -68,7 +68,7 @@
 // Returns: 5
 // 
 // END CUT HERE
-#line 72 "Alignment.cpp"
+//#line 72 "Alignment.cpp"
 #include <iostream>
 #include <sstream>
 #include <algorithm>
