@@ -58,22 +58,27 @@
 // 
 // 
 // END CUT HERE
-#line 62 "PrimeSoccer.cpp"
+
+// at least one, none get prime numbers 
+// 90 minutes: 18 intervals 
+// make an array of 18 matches 
+// what is the probability that none of the team gets prime numbers 
+// probability that both of the team gets non-prime numbers 
+
 #include <iostream>
 #include <sstream>
 #include <algorithm>
 #include <string>
 #include <vector>
-#include <cmath> 
+#include <math> 
 #include <map> 
 #include <queue> 
 #include <stack> 
 
-using namespace std; 
-
-class PrimeSoccer {
-	public:
-	double getProbability(int skillOfTeamA, int skillOfTeamB) {
-		
-	}
+class PrimeSoccer 
+{
+		public:
+		double getProbability(int skillOfTeamA, int skillOfTeamB) {
+				
+		}
 };

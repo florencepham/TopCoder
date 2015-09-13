@@ -141,15 +141,9 @@
 
 using namespace std; 
 
-typedef vector<string> VS
-
 class Paintball {
 	public:
 	vector <string> getLeaderboard(vector <string> players, vector <string> messages) {
-		map<string, VS> team;
-		map<string, int> score;
-		team = parsePlayers(players); 
-		team = parseMessages(team, messages); 
-		vector<result> 
+		
 	}
 };
